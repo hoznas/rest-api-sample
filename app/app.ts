@@ -13,9 +13,8 @@ app.use(bodyParser.json())
 //const PORT = process.env.PORT || 3000
 const port = 3000
 
-app.get('/helloworld',(req,res)=>{
-    res.status(200).send({message: "Hello world!"})
-})
+import {router} from './routes/index'
+app.use('/', router) 
 
 app.listen(port)
 console.log('listen on port ' + port)
